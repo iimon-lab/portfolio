@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>炭火焼肉 和牛庵 | 厳選A5黒毛和牛を個室で</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#1a1a1a;--accent:#c4a265;--red:#8b2500;--text:#333;--cream:#faf7f0;--white:#fff}
+body{font-family:'Hiragino Mincho ProN','Yu Mincho',serif;color:var(--text);line-height:1.8}
+a{text-decoration:none;color:inherit}
+
+/* Hero */
+.hero{position:relative;height:100vh;min-height:600px;background:linear-gradient(135deg,#1a1a1a 0%,#2a1a10 50%,#1a1a1a 100%);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(196,162,101,.15) 0%,transparent 60%)}
+.hero-content{position:relative;z-index:1;padding:0 20px}
+.hero-jp{font-size:clamp(11px,1.2vw,13px);letter-spacing:8px;color:var(--accent);margin-bottom:16px}
+.hero h1{font-size:clamp(32px,6vw,64px);font-weight:400;letter-spacing:12px;margin-bottom:8px}
+.hero-en{font-family:'Georgia',serif;font-size:clamp(11px,1.2vw,14px);letter-spacing:6px;opacity:.5;margin-bottom:32px}
+.hero-tagline{font-size:clamp(14px,1.8vw,18px);font-weight:300;letter-spacing:4px;color:var(--accent);margin-bottom:48px}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:var(--primary);padding:16px 40px;font-size:13px;letter-spacing:3px;transition:all .3s;font-family:inherit}
+.btn-primary:hover{background:#b8933d}
+.btn-outline{border:1px solid rgba(255,255,255,.4);color:var(--white);padding:16px 40px;font-size:13px;letter-spacing:3px;transition:all .3s;font-family:inherit}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Section */
+section{padding:100px 20px}
+.container{max-width:1000px;margin:0 auto}
+.section-en{font-family:'Georgia',serif;font-size:11px;letter-spacing:6px;color:var(--accent);margin-bottom:4px}
+.section-title{font-size:clamp(22px,3vw,32px);font-weight:400;letter-spacing:6px;margin-bottom:48px;color:var(--primary)}
+.text-center{text-align:center}
+
+/* About */
+.about{background:var(--cream)}
+.about-text{max-width:680px;margin:0 auto;text-align:center}
+.about-text p{font-size:15px;line-height:2.4;margin-bottom:20px}
+.about-divider{width:60px;height:1px;background:var(--accent);margin:32px auto}
+
+/* Menu */
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.menu-card{background:var(--cream);overflow:hidden;transition:transform .3s}
+.menu-card:hover{transform:translateY(-4px)}
+.menu-img{aspect-ratio:4/3;background:linear-gradient(135deg,#3a2a1a,#2a1a10);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:14px;letter-spacing:3px}
+.menu-body{padding:24px}
+.menu-body h3{font-size:18px;letter-spacing:3px;margin-bottom:8px;color:var(--primary)}
+.menu-body p{font-size:13px;color:#777;line-height:1.8;margin-bottom:12px}
+.menu-price{font-size:20px;color:var(--accent);letter-spacing:2px}
+.menu-price small{font-size:12px;color:#999}
+
+/* Course */
+.course{background:var(--primary);color:var(--white)}
+.course .section-title{color:var(--white)}
+.course-list{max-width:600px;margin:0 auto}
+.course-item{padding:28px 0;border-bottom:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+.course-name{font-size:17px;letter-spacing:3px}
+.course-desc{width:100%;font-size:13px;color:rgba(255,255,255,.5);margin-top:4px}
+.course-price{font-size:20px;color:var(--accent);letter-spacing:2px;white-space:nowrap}
+
+/* Interior */
+.interior-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.interior-item{aspect-ratio:1;background:linear-gradient(135deg,#e8e2d8,#d4ccc0);display:flex;align-items:center;justify-content:center;color:#999;font-size:12px;letter-spacing:2px;transition:opacity .3s}
+.interior-item:hover{opacity:.85}
+@media(max-width:600px){.interior-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Info */
+.info{background:var(--cream)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.info-map{aspect-ratio:1;background:linear-gradient(135deg,#ddd,#ccc);border-radius:4px;display:flex;align-items:center;justify-content:center;color:#999;font-size:14px}
+.info-table{width:100%}
+.info-table tr{border-bottom:1px solid #e0dbd4}
+.info-table th{text-align:left;padding:14px 0;font-size:13px;font-weight:600;color:var(--primary);width:100px;letter-spacing:2px;vertical-align:top}
+.info-table td{padding:14px 0;font-size:14px;color:#555}
+@media(max-width:768px){.info-grid{grid-template-columns:1fr}}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,#1a1a1a,#2a1a10);text-align:center;color:var(--white);padding:80px 20px}
+.cta h2{font-size:clamp(20px,3vw,28px);font-weight:400;letter-spacing:6px;margin-bottom:12px}
+.cta-sub{font-size:13px;opacity:.6;letter-spacing:2px;margin-bottom:32px}
+.cta-tel{font-size:clamp(28px,4vw,40px);font-weight:400;letter-spacing:4px;color:var(--accent);margin-bottom:6px}
+.cta-note{font-size:12px;opacity:.5;margin-bottom:32px}
+
+/* Footer */
+footer{background:#0a0a0a;color:#666;text-align:center;padding:40px 20px;font-size:12px;letter-spacing:1px}
+footer .name{color:var(--accent);font-size:16px;letter-spacing:4px;margin-bottom:8px;font-family:'Hiragino Mincho ProN',serif}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="hero-content">
+<div class="hero-jp">厳選A5黒毛和牛</div>
+<h1>和牛庵</h1>
+<div class="hero-en">WAGYUAN — Since 2018</div>
+<p class="hero-tagline">炭火の薫りと、極上の肉質を</p>
+<div class="hero-btns">
+<a href="#reserve" class="btn-primary">予約する</a>
+<a href="#menu" class="btn-outline">メニューを見る</a>
+</div>
+</div>
+</section>
+
+<section class="about">
+<div class="container text-center">
+<div class="section-en">ABOUT</div>
+<h2 class="section-title">和牛庵のこだわり</h2>
+<div class="about-text">
+<p>和牛庵では、全国の牧場から厳選したA5ランクの黒毛和牛のみをご提供しております。</p>
+<p>備長炭で丁寧に焼き上げる炭火焼肉は、肉本来の旨みと香りを最大限に引き出します。</p>
+<div class="about-divider"></div>
+<p>全席個室のプライベート空間で、大切な方との特別なひとときをお過ごしください。</p>
+</div>
+</div>
+</section>
+
+<section id="menu">
+<div class="container">
+<div class="section-en text-center">MENU</div>
+<h2 class="section-title text-center">おすすめメニュー</h2>
+<div class="menu-grid">
+<div class="menu-card">
+<div class="menu-img">特選盛り合わせ</div>
+<div class="menu-body">
+<h3>特選五種盛り</h3>
+<p>シャトーブリアン・サーロイン・リブロース・ミスジ・イチボの豪華五種。当店の看板メニューです。</p>
+<div class="menu-price">7,800<small>円（税込）</small></div>
+</div>
+</div>
+<div class="menu-card">
+<div class="menu-img">厚切りタン塩</div>
+<div class="menu-body">
+<h3>極厚タン塩</h3>
+<p>通常の3倍の厚さにカットした牛タン。外はカリッと中はジューシー。レモンと塩でどうぞ。</p>
+<div class="menu-price">2,480<small>円（税込）</small></div>
+</div>
+</div>
+<div class="menu-card">
+<div class="menu-img">炙り和牛寿司</div>
+<div class="menu-body">
+<h3>炙り和牛にぎり</h3>
+<p>A5和牛を贅沢に使った炙り寿司。とろけるような食感と、炭火の香ばしさが口の中に広がります。</p>
+<div class="menu-price">1,980<small>円（税込・2貫）</small></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="course">
+<div class="container">
+<div class="section-en text-center" style="color:var(--accent)">COURSE</div>
+<h2 class="section-title text-center">コース料理</h2>
+<div class="course-list">
+<div class="course-item">
+<span class="course-name">花コース</span>
+<span class="course-price">6,800円</span>
+<span class="course-desc">前菜・サラダ・和牛3種・ホルモン2種・ご飯物・デザート</span>
+</div>
+<div class="course-item">
+<span class="course-name">月コース</span>
+<span class="course-price">9,800円</span>
+<span class="course-desc">前菜・キムチ盛り・特選和牛5種・厚切りタン・冷麺・デザート</span>
+</div>
+<div class="course-item">
+<span class="course-name">雪コース</span>
+<span class="course-price">15,000円</span>
+<span class="course-desc">先付・前菜・シャトーブリアン含む最高級7種・炙り寿司・石焼ビビンバ・デザート</span>
+</div>
+<div class="course-item">
+<span class="course-name">飲み放題</span>
+<span class="course-price">+2,000円</span>
+<span class="course-desc">生ビール・ハイボール・焼酎・日本酒・ワイン・ソフトドリンク（120分）</span>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-en text-center">INTERIOR</div>
+<h2 class="section-title text-center">店内</h2>
+<div class="interior-grid">
+<div class="interior-item">個室（2名様）</div>
+<div class="interior-item">個室（4名様）</div>
+<div class="interior-item">個室（8名様）</div>
+<div class="interior-item">カウンター</div>
+<div class="interior-item">エントランス</div>
+<div class="interior-item">ワインセラー</div>
+</div>
+</div>
+</section>
+
+<section class="info">
+<div class="container">
+<div class="section-en">INFORMATION</div>
+<h2 class="section-title">店舗情報</h2>
+<div class="info-grid">
+<div class="info-map">MAP</div>
+<table class="info-table">
+<tr><th>店名</th><td>炭火焼肉 和牛庵</td></tr>
+<tr><th>住所</th><td>東京都港区六本木X-XX-X<br>六本木ヒルズサンプルビル B1F</td></tr>
+<tr><th>電話</th><td>03-XXXX-XXXX</td></tr>
+<tr><th>営業時間</th><td>ランチ 11:30〜14:30（L.O. 14:00）<br>ディナー 17:00〜23:00（L.O. 22:00）</td></tr>
+<tr><th>定休日</th><td>月曜日（祝日の場合は翌火曜日）</td></tr>
+<tr><th>座席数</th><td>42席（全席個室）</td></tr>
+<tr><th>アクセス</th><td>東京メトロ日比谷線「六本木」駅 1c出口 徒歩3分<br>都営大江戸線「六本木」駅 3番出口 徒歩5分</td></tr>
+</table>
+</div>
+</div>
+</section>
+
+<section class="cta" id="reserve">
+<h2>ご予約・お問い合わせ</h2>
+<p class="cta-sub">完全予約制・個室のご指定はお電話にて承ります</p>
+<div class="cta-tel">03-XXXX-XXXX</div>
+<div class="cta-note">受付時間 10:00〜22:00</div>
+<a href="#" class="btn-primary">WEB予約はこちら</a>
+</section>
+
+<footer>
+<div class="name">炭火焼肉 和牛庵</div>
+<p>東京都港区六本木X-XX-X</p>
+<p style="margin-top:16px">※ これはポートフォリオ用のサンプルLPです。実在の店舗ではありません。</p>
+<p style="margin-top:8px">&copy; 2026 iimon_lab Portfolio Sample</p>
+</footer>
+
+</body>
+</html>

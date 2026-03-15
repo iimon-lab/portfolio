@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hair salon Luce | 表参道の隠れ家ヘアサロン</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#2d2926;--accent:#b8860b;--pink:#d4a5a5;--sage:#a8b5a0;--cream:#faf8f5;--white:#fff;--text:#444}
+body{font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;color:var(--text);line-height:1.8}
+a{text-decoration:none;color:inherit}
+
+/* Hero */
+.hero{position:relative;height:100vh;min-height:600px;background:linear-gradient(135deg,#f5ede4 0%,#e8ddd0 40%,#d4c8b8 100%);display:flex;align-items:center;overflow:hidden}
+.hero-content{max-width:1100px;margin:0 auto;padding:0 40px;width:100%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}
+.hero-text{z-index:1}
+.hero-badge{display:inline-block;background:var(--accent);color:var(--white);padding:4px 16px;font-size:11px;letter-spacing:2px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(36px,5vw,52px);font-weight:300;letter-spacing:2px;color:var(--primary);line-height:1.3;margin-bottom:8px}
+.hero-en{font-size:13px;letter-spacing:4px;color:var(--accent);margin-bottom:20px}
+.hero-desc{font-size:14px;color:#777;line-height:2;margin-bottom:32px}
+.hero-visual{aspect-ratio:3/4;background:linear-gradient(135deg,#d4c8b8,#c4b8a8);border-radius:200px 200px 40px 40px;display:flex;align-items:center;justify-content:center;color:#999;font-size:14px}
+.btn{display:inline-block;padding:16px 40px;font-size:13px;letter-spacing:3px;transition:all .3s;border-radius:30px;font-family:inherit}
+.btn-gold{background:var(--accent);color:var(--white)}
+.btn-gold:hover{background:#a07608;transform:translateY(-2px)}
+.btn-border{border:1px solid var(--primary);color:var(--primary);margin-left:12px}
+.btn-border:hover{background:var(--primary);color:var(--white)}
+@media(max-width:768px){.hero-content{grid-template-columns:1fr;text-align:center}.hero-visual{max-width:300px;margin:0 auto;aspect-ratio:1}}
+
+/* Section */
+section{padding:100px 20px}
+.container{max-width:1000px;margin:0 auto}
+.sec-label{font-size:11px;letter-spacing:6px;color:var(--accent);margin-bottom:4px}
+.sec-title{font-size:clamp(22px,3vw,32px);font-weight:300;letter-spacing:4px;margin-bottom:48px;color:var(--primary)}
+.text-center{text-align:center}
+
+/* Coupon */
+.coupon{background:linear-gradient(135deg,#fdf6ec,#f9eed8);text-align:center;padding:60px 20px}
+.coupon-box{max-width:600px;margin:0 auto;background:var(--white);border-radius:16px;padding:40px;box-shadow:0 4px 24px rgba(0,0,0,.06);position:relative;overflow:hidden}
+.coupon-box::before{content:'COUPON';position:absolute;top:12px;right:-24px;background:var(--accent);color:var(--white);font-size:10px;letter-spacing:3px;padding:4px 40px;transform:rotate(45deg)}
+.coupon-title{font-size:13px;letter-spacing:4px;color:var(--accent);margin-bottom:8px}
+.coupon-offer{font-size:clamp(24px,4vw,36px);font-weight:700;color:var(--primary);margin-bottom:4px}
+.coupon-offer span{color:var(--accent);font-size:1.3em}
+.coupon-note{font-size:12px;color:#999;margin-bottom:20px}
+.coupon-cta{display:inline-block;background:var(--accent);color:var(--white);padding:14px 48px;border-radius:30px;font-size:14px;letter-spacing:2px;transition:all .3s}
+.coupon-cta:hover{background:#a07608}
+
+/* Menu */
+.menu{background:var(--cream)}
+.menu-list{max-width:700px;margin:0 auto}
+.menu-cat{font-size:16px;letter-spacing:4px;color:var(--accent);padding:20px 0 12px;border-bottom:2px solid var(--accent);margin-bottom:0;margin-top:32px}
+.menu-cat:first-of-type{margin-top:0}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;border-bottom:1px solid #e8e4de;gap:16px}
+.menu-name{font-size:15px;color:var(--primary)}
+.menu-name small{display:block;font-size:12px;color:#999;margin-top:2px;font-weight:normal}
+.menu-price{font-size:16px;color:var(--accent);white-space:nowrap;letter-spacing:1px}
+.menu-price s{color:#bbb;font-size:13px;margin-right:8px}
+
+/* Stylist */
+.stylist-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
+.stylist-card{text-align:center}
+.stylist-photo{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,#e8ddd0,#d4c8b8);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px}
+.stylist-card h3{font-size:16px;letter-spacing:2px;color:var(--primary);margin-bottom:4px}
+.stylist-role{font-size:12px;color:var(--accent);letter-spacing:2px;margin-bottom:8px}
+.stylist-card p{font-size:13px;color:#888;line-height:1.7}
+
+/* Style Gallery */
+.styles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.style-item{aspect-ratio:3/4;background:linear-gradient(135deg,#e8ddd0,#d4c8b8);border-radius:12px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;color:#888;font-size:12px;letter-spacing:2px;transition:transform .3s}
+.style-item:hover{transform:scale(1.02)}
+
+/* Info */
+.info{background:var(--cream)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.info-map{aspect-ratio:1;background:linear-gradient(135deg,#ddd,#ccc);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#999;font-size:14px}
+.info-detail dl{display:grid;grid-template-columns:100px 1fr;gap:14px 20px;font-size:14px}
+.info-detail dt{color:var(--primary);font-weight:600;letter-spacing:1px}
+.info-detail dd{color:#666}
+@media(max-width:768px){.info-grid{grid-template-columns:1fr}}
+
+/* CTA */
+.cta{background:var(--primary);text-align:center;color:var(--white);padding:80px 20px}
+.cta h2{font-size:clamp(18px,2.5vw,26px);font-weight:300;letter-spacing:4px;margin-bottom:8px}
+.cta-sub{font-size:13px;opacity:.6;margin-bottom:32px}
+.cta-tel{font-size:clamp(26px,4vw,38px);font-weight:300;letter-spacing:4px;color:var(--accent);margin-bottom:4px}
+.cta-hours{font-size:12px;opacity:.5;margin-bottom:28px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* Footer */
+footer{background:#1a1816;color:#777;text-align:center;padding:40px 20px;font-size:12px}
+footer .logo{font-size:18px;letter-spacing:4px;color:var(--accent);margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="hero-content">
+<div class="hero-text">
+<div class="hero-badge">NEW OPEN</div>
+<h1>hair salon<br>Luce</h1>
+<div class="hero-en">LUCE — light of beauty</div>
+<p class="hero-desc">表参道の路地裏に佇む、大人のためのプライベートサロン。<br>あなたの「なりたい」を叶える空間がここにあります。</p>
+<div>
+<a href="#reserve" class="btn btn-gold">予約する</a>
+<a href="#menu" class="btn btn-border">メニュー</a>
+</div>
+</div>
+<div class="hero-visual">SALON IMAGE</div>
+</div>
+</section>
+
+<section class="coupon">
+<div class="coupon-box">
+<div class="coupon-title">ご新規様限定クーポン</div>
+<div class="coupon-offer">カット + カラー <span>¥7,700</span></div>
+<div class="coupon-note">通常 ¥13,200 → 42% OFF ／ 施術時間 約120分</div>
+<a href="#reserve" class="coupon-cta">このクーポンで予約</a>
+</div>
+</section>
+
+<section class="menu" id="menu">
+<div class="container">
+<div class="sec-label text-center">MENU</div>
+<h2 class="sec-title text-center">メニュー・料金</h2>
+<div class="menu-list">
+<h3 class="menu-cat">CUT</h3>
+<div class="menu-item">
+<div class="menu-name">カット<small>シャンプー・ブロー込み</small></div>
+<div class="menu-price">¥6,600</div>
+</div>
+<div class="menu-item">
+<div class="menu-name">前髪カット</div>
+<div class="menu-price">¥1,100</div>
+</div>
+<h3 class="menu-cat">COLOR</h3>
+<div class="menu-item">
+<div class="menu-name">ワンカラー<small>リタッチ or フルカラー</small></div>
+<div class="menu-price">¥7,700〜</div>
+</div>
+<div class="menu-item">
+<div class="menu-name">ハイライト<small>ブリーチ + オンカラー</small></div>
+<div class="menu-price">¥13,200〜</div>
+</div>
+<div class="menu-item">
+<div class="menu-name">インナーカラー</div>
+<div class="menu-price">¥8,800〜</div>
+</div>
+<h3 class="menu-cat">PERM / TREATMENT</h3>
+<div class="menu-item">
+<div class="menu-name">デジタルパーマ<small>カット込み</small></div>
+<div class="menu-price">¥15,400</div>
+</div>
+<div class="menu-item">
+<div class="menu-name">縮毛矯正<small>カット込み</small></div>
+<div class="menu-price">¥19,800</div>
+</div>
+<div class="menu-item">
+<div class="menu-name">髪質改善トリートメント</div>
+<div class="menu-price">¥8,800</div>
+</div>
+<h3 class="menu-cat">HEAD SPA</h3>
+<div class="menu-item">
+<div class="menu-name">ヘッドスパ 30min<small>頭皮ケア + マッサージ</small></div>
+<div class="menu-price">¥4,400</div>
+</div>
+<div class="menu-item">
+<div class="menu-name">プレミアムスパ 60min<small>炭酸クレンジング + アロマ</small></div>
+<div class="menu-price">¥8,800</div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="sec-label text-center">STYLIST</div>
+<h2 class="sec-title text-center">スタイリスト</h2>
+<div class="stylist-grid">
+<div class="stylist-card">
+<div class="stylist-photo">PHOTO</div>
+<h3>佐藤 美咲</h3>
+<div class="stylist-role">Owner / Top Stylist</div>
+<p>経歴15年。表参道の有名サロンを経て独立。再現性の高いカットと透明感カラーが得意。</p>
+</div>
+<div class="stylist-card">
+<div class="stylist-photo">PHOTO</div>
+<h3>田中 蓮</h3>
+<div class="stylist-role">Stylist</div>
+<p>メンズ・レディース問わず対応。トレンドを押さえつつ、ライフスタイルに合ったスタイルを提案。</p>
+</div>
+<div class="stylist-card">
+<div class="stylist-photo">PHOTO</div>
+<h3>山本 結衣</h3>
+<div class="stylist-role">Junior Stylist</div>
+<p>カラーリストとしても活動中。ハイトーンカラー・デザインカラーはお任せください。</p>
+</div>
+</div>
+</div>
+</section>
+
+<section style="background:var(--cream)">
+<div class="container">
+<div class="sec-label text-center">STYLE</div>
+<h2 class="sec-title text-center">スタイルギャラリー</h2>
+<div class="styles-grid">
+<div class="style-item">ショートボブ</div>
+<div class="style-item">ハイライト</div>
+<div class="style-item">レイヤーロング</div>
+<div class="style-item">メンズマッシュ</div>
+</div>
+</div>
+</section>
+
+<section class="info">
+<div class="container">
+<div class="sec-label">SALON INFO</div>
+<h2 class="sec-title">サロン情報</h2>
+<div class="info-grid">
+<div class="info-map">MAP</div>
+<div class="info-detail">
+<dl>
+<dt>サロン名</dt><dd>hair salon Luce（ルーチェ）</dd>
+<dt>住所</dt><dd>東京都渋谷区神宮前X-XX-X<br>サンプルビル 2F</dd>
+<dt>電話</dt><dd>03-XXXX-XXXX</dd>
+<dt>営業時間</dt><dd>平日 10:00〜21:00<br>土日祝 9:00〜19:00</dd>
+<dt>定休日</dt><dd>毎週火曜日・第3水曜日</dd>
+<dt>座席数</dt><dd>4席（半個室2席 + フルフラットシャンプー台2台）</dd>
+<dt>アクセス</dt><dd>東京メトロ「表参道」駅 A2出口 徒歩4分<br>JR「原宿」駅 表参道口 徒歩8分</dd>
+</dl>
+</div>
+</div>
+</div>
+</section>
+
+<section class="cta" id="reserve">
+<h2>ご予約・お問い合わせ</h2>
+<p class="cta-sub">お電話またはWEBからご予約いただけます</p>
+<div class="cta-tel">03-XXXX-XXXX</div>
+<div class="cta-hours">受付時間 9:00〜20:00</div>
+<div class="cta-btns">
+<a href="#" class="btn btn-gold">WEB予約</a>
+<a href="#" class="btn" style="border:1px solid var(--accent);color:var(--accent)">LINE予約</a>
+</div>
+</section>
+
+<footer>
+<div class="logo">Luce</div>
+<p>hair salon Luce｜東京都渋谷区神宮前X-XX-X</p>
+<p style="margin-top:16px">※ これはポートフォリオ用のサンプルLPです。実在のサロンではありません。</p>
+<p style="margin-top:8px">&copy; 2026 iimon_lab Portfolio Sample</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LP制作実績 | iimon_lab Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#1a1a2e;--accent:#00b894;--text:#333;--light:#f4f6f8;--white:#fff}
+body{font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;color:var(--text);line-height:1.8;background:var(--light)}
+a{text-decoration:none;color:inherit}
+
+/* Header */
+.header{background:var(--primary);color:var(--white);text-align:center;padding:60px 20px 48px}
+.header h1{font-size:clamp(24px,4vw,36px);font-weight:300;letter-spacing:4px;margin-bottom:8px}
+.header-accent{color:var(--accent)}
+.header p{font-size:14px;opacity:.7;letter-spacing:1px}
+
+/* Cards */
+.cards{max-width:1100px;margin:0 auto;padding:48px 20px 80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px}
+.card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,.12)}
+.card-thumb{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:14px;letter-spacing:3px;position:relative;overflow:hidden}
+.card-thumb::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15)}
+.card-thumb span{position:relative;z-index:1;font-size:clamp(16px,2vw,20px);font-weight:500;letter-spacing:4px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.card-body{padding:24px}
+.card-badge{display:inline-block;background:var(--accent);color:var(--white);font-size:11px;letter-spacing:2px;padding:3px 12px;border-radius:12px;margin-bottom:12px}
+.card-body h2{font-size:18px;font-weight:600;letter-spacing:1px;margin-bottom:8px;color:var(--primary)}
+.card-body p{font-size:13px;color:#777;line-height:1.8;margin-bottom:16px}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.tag{font-size:11px;color:#888;border:1px solid #ddd;padding:2px 10px;border-radius:20px;letter-spacing:1px}
+.card-link{display:inline-block;color:var(--accent);font-size:13px;font-weight:600;letter-spacing:2px;border-bottom:1px solid var(--accent);padding-bottom:2px;transition:opacity .3s}
+.card-link:hover{opacity:.7}
+
+/* Thumbs */
+.thumb-realestate{background:linear-gradient(135deg,#1a3a5c,#2d5a87)}
+.thumb-restaurant{background:linear-gradient(135deg,#1a1a1a,#2a1a10)}
+.thumb-salon{background:linear-gradient(135deg,#f5ede4,#d4c8b8)}
+.thumb-salon span{color:#2d2926;text-shadow:none}
+
+/* Footer */
+footer{background:var(--primary);color:#888;text-align:center;padding:32px 20px;font-size:12px;letter-spacing:1px}
+footer .brand{color:var(--accent);font-size:16px;letter-spacing:3px;margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<header class="header">
+<h1><span class="header-accent">iimon_lab</span> Portfolio</h1>
+<p>LP制作実績サンプル — Webサイト・ランディングページ制作</p>
+</header>
+
+<div class="cards">
+
+<a href="real-estate/index.html" class="card">
+<div class="card-thumb thumb-realestate">
+<span>不動産LP</span>
+</div>
+<div class="card-body">
+<div class="card-badge">REAL ESTATE</div>
+<h2>グランヴィラ代官山</h2>
+<p>高級分譲マンションの物件紹介LP。洗練されたダークブルー×ゴールドの配色で、物件のブランドイメージを訴求。コンセプト・設備・間取り・アクセスまで網羅。</p>
+<div class="card-tags">
+<span class="tag">レスポンシブ</span>
+<span class="tag">CSS Grid</span>
+<span class="tag">アニメーション</span>
+<span class="tag">単一HTML</span>
+</div>
+<span class="card-link">サンプルを見る →</span>
+</div>
+</a>
+
+<a href="restaurant/index.html" class="card">
+<div class="card-thumb thumb-restaurant">
+<span>飲食店LP</span>
+</div>
+<div class="card-body">
+<div class="card-badge">RESTAURANT</div>
+<h2>炭火焼肉 和牛庵</h2>
+<p>高級焼肉店の集客LP。和の雰囲気を活かしたダーク×ゴールドのデザイン。おすすめメニュー・コース料金・店内ギャラリー・予約導線を最適化。</p>
+<div class="card-tags">
+<span class="tag">レスポンシブ</span>
+<span class="tag">CSS Grid</span>
+<span class="tag">明朝体</span>
+<span class="tag">単一HTML</span>
+</div>
+<span class="card-link">サンプルを見る →</span>
+</div>
+</a>
+
+<a href="beauty-salon/index.html" class="card">
+<div class="card-thumb thumb-salon">
+<span>美容院LP</span>
+</div>
+<div class="card-body">
+<div class="card-badge">BEAUTY SALON</div>
+<h2>hair salon Luce</h2>
+<p>表参道のプライベートサロンLP。温かみのあるクリーム×ゴールドの配色。クーポン・メニュー料金表・スタイリスト紹介・スタイルギャラリーを網羅。</p>
+<div class="card-tags">
+<span class="tag">レスポンシブ</span>
+<span class="tag">CSS Grid</span>
+<span class="tag">クーポンUI</span>
+<span class="tag">単一HTML</span>
+</div>
+<span class="card-link">サンプルを見る →</span>
+</div>
+</a>
+
+</div>
+
+<footer>
+<div class="brand">iimon_lab</div>
+<p>LP制作・Webサイト制作のご依頼はお気軽にお問い合わせください</p>
+<p style="margin-top:12px;opacity:.5">&copy; 2026 iimon_lab Portfolio</p>
+</footer>
+
+</body>
+</html>
