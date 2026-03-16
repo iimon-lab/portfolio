@@ -3,115 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LP制作実績 | iimon_lab Portfolio</title>
+<title>iimon_lab | LP制作ポートフォリオ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Sans+JP:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#1a1a2e;--accent:#00b894;--text:#333;--light:#f4f6f8;--white:#fff}
-body{font-family:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;color:var(--text);line-height:1.8;background:var(--light)}
+:root{--primary:#0f0f0f;--accent:#00b894;--accent2:#c4a265;--text:#333;--text-light:#888;--dark:#1a1a2e;--white:#fff;--sans:'Noto Sans JP',sans-serif;--display:'Cormorant Garamond',serif}
+body{font-family:var(--sans);color:var(--text);line-height:1.8;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 
-/* Header */
-.header{background:var(--primary);color:var(--white);text-align:center;padding:60px 20px 48px}
-.header h1{font-size:clamp(24px,4vw,36px);font-weight:300;letter-spacing:4px;margin-bottom:8px}
-.header-accent{color:var(--accent)}
-.header p{font-size:14px;opacity:.7;letter-spacing:1px}
+.hero{position:relative;min-height:50vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);color:var(--white);padding:80px 20px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0v60M0 30h60' stroke='rgba(0,184,148,0.04)' stroke-width='0.5'/%3E%3C/svg%3E")}
+.hero-content{position:relative;z-index:1}
+.hero-label{font-family:var(--display);font-size:12px;letter-spacing:6px;color:var(--accent);margin-bottom:16px}
+.hero h1{font-family:var(--display);font-size:clamp(32px,5vw,56px);font-weight:300;letter-spacing:6px;margin-bottom:12px}
+.hero-sub{font-size:14px;font-weight:200;letter-spacing:3px;opacity:.6;max-width:600px;margin:0 auto}
 
-/* Cards */
-.cards{max-width:1100px;margin:0 auto;padding:48px 20px 80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px}
-.card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s}
-.card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,.12)}
-.card-thumb{aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:14px;letter-spacing:3px;position:relative;overflow:hidden}
-.card-thumb::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15)}
-.card-thumb span{position:relative;z-index:1;font-size:clamp(16px,2vw,20px);font-weight:500;letter-spacing:4px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
-.card-body{padding:24px}
-.card-badge{display:inline-block;background:var(--accent);color:var(--white);font-size:11px;letter-spacing:2px;padding:3px 12px;border-radius:12px;margin-bottom:12px}
-.card-body h2{font-size:18px;font-weight:600;letter-spacing:1px;margin-bottom:8px;color:var(--primary)}
-.card-body p{font-size:13px;color:#777;line-height:1.8;margin-bottom:16px}
-.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-.tag{font-size:11px;color:#888;border:1px solid #ddd;padding:2px 10px;border-radius:20px;letter-spacing:1px}
-.card-link{display:inline-block;color:var(--accent);font-size:13px;font-weight:600;letter-spacing:2px;border-bottom:1px solid var(--accent);padding-bottom:2px;transition:opacity .3s}
-.card-link:hover{opacity:.7}
+.works{padding:80px 20px;max-width:1200px;margin:0 auto}
+.works-header{text-align:center;margin-bottom:60px}
+.works-en{font-family:var(--display);font-size:48px;font-weight:300;color:rgba(0,184,148,.1);line-height:1;margin-bottom:-10px}
+.works-label{font-family:var(--display);font-size:12px;letter-spacing:6px;color:var(--accent)}
+.works-title{font-size:24px;font-weight:300;letter-spacing:4px;margin-top:8px}
 
-/* Thumbs */
-.thumb-realestate{background:linear-gradient(135deg,#1a3a5c,#2d5a87)}
-.thumb-restaurant{background:linear-gradient(135deg,#1a1a1a,#2a1a10)}
-.thumb-salon{background:linear-gradient(135deg,#f5ede4,#d4c8b8)}
-.thumb-salon span{color:#2d2926;text-shadow:none}
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.work-card{border:1px solid #eee;overflow:hidden;transition:all .4s;border-radius:4px}
+.work-card:hover{transform:translateY(-8px);box-shadow:0 16px 40px rgba(0,0,0,.1)}
+.work-thumb{aspect-ratio:16/10;position:relative;overflow:hidden}
+.work-thumb-inner{width:100%;height:100%;transition:transform .6s}
+.work-card:hover .work-thumb-inner{transform:scale(1.03)}
+.work-thumb-1 .work-thumb-inner{background:linear-gradient(135deg,#1a3a5c,#2d5a87)}
+.work-thumb-2 .work-thumb-inner{background:linear-gradient(135deg,#1a1008,#2a1a10)}
+.work-thumb-3 .work-thumb-inner{background:linear-gradient(135deg,#e8ddd0,#d4c4b0)}
+.work-badge{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.6);color:var(--white);font-size:10px;letter-spacing:2px;padding:4px 12px;border-radius:2px;z-index:1}
+.work-body{padding:24px}
+.work-category{font-family:var(--display);font-size:11px;letter-spacing:3px;color:var(--accent);margin-bottom:4px}
+.work-card h3{font-size:16px;font-weight:400;letter-spacing:2px;margin-bottom:8px}
+.work-desc{font-size:13px;color:var(--text-light);line-height:1.8;margin-bottom:16px}
+.work-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.work-tags span{font-size:10px;letter-spacing:1px;padding:3px 10px;border:1px solid #ddd;border-radius:2px;color:var(--text-light)}
+.work-link{display:inline-block;font-size:12px;letter-spacing:2px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:2px;transition:all .3s}
+.work-link:hover{color:#009d7e}
+@media(max-width:768px){.works-grid{grid-template-columns:1fr}}
 
-/* Footer */
-footer{background:var(--primary);color:#888;text-align:center;padding:32px 20px;font-size:12px;letter-spacing:1px}
-footer .brand{color:var(--accent);font-size:16px;letter-spacing:3px;margin-bottom:6px}
+.profile{background:#f8f8f8;padding:60px 20px}
+.profile-inner{max-width:600px;margin:0 auto;text-align:center}
+.profile-name{font-family:var(--display);font-size:28px;letter-spacing:4px;color:var(--accent);margin-bottom:4px}
+.profile-sub{font-size:12px;letter-spacing:3px;color:var(--text-light);margin-bottom:20px}
+.profile-text{font-size:14px;color:#555;line-height:2}
+.profile-skills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.profile-skills span{font-size:11px;padding:4px 14px;background:var(--white);border:1px solid #e0e0e0;border-radius:2px;color:var(--text-light)}
+
+footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;padding:40px 20px}
+.footer-logo{font-family:var(--display);font-size:18px;letter-spacing:4px;color:var(--accent);margin-bottom:8px}
+footer small{font-size:11px;opacity:.5}
 </style>
 </head>
 <body>
 
-<header class="header">
-<h1><span class="header-accent">iimon_lab</span> Portfolio</h1>
-<p>LP制作実績サンプル — Webサイト・ランディングページ制作</p>
-</header>
-
-<div class="cards">
-
-<a href="real-estate/index.html" class="card">
-<div class="card-thumb thumb-realestate">
-<span>不動産LP</span>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-label">PORTFOLIO</div>
+<h1>iimon_lab</h1>
+<p class="hero-sub">Webサイト・LP制作 / PWA開発 / AI活用リサーチ</p>
 </div>
-<div class="card-body">
-<div class="card-badge">REAL ESTATE</div>
-<h2>グランヴィラ代官山</h2>
-<p>高級分譲マンションの物件紹介LP。洗練されたダークブルー×ゴールドの配色で、物件のブランドイメージを訴求。コンセプト・設備・間取り・アクセスまで網羅。</p>
-<div class="card-tags">
-<span class="tag">レスポンシブ</span>
-<span class="tag">CSS Grid</span>
-<span class="tag">アニメーション</span>
-<span class="tag">単一HTML</span>
+</section>
+
+<section class="works">
+<div class="works-header">
+<div class="works-en">Works</div>
+<div class="works-label">WORKS</div>
+<h2 class="works-title">制作実績</h2>
 </div>
-<span class="card-link">サンプルを見る →</span>
+<div class="works-grid">
+<a href="./real-estate/" class="work-card">
+<div class="work-thumb work-thumb-1">
+<div class="work-thumb-inner"></div>
+<div class="work-badge">SAMPLE LP</div>
+</div>
+<div class="work-body">
+<div class="work-category">REAL ESTATE</div>
+<h3>グランヴィラ代官山</h3>
+<p class="work-desc">高級分譲マンションのプロモーションLP。ダークブルー×ゴールドで高級感を演出。スクロールアニメーション実装。</p>
+<div class="work-tags">
+<span>HTML/CSS</span>
+<span>レスポンシブ</span>
+<span>アニメーション</span>
+</div>
+<span class="work-link">VIEW →</span>
 </div>
 </a>
-
-<a href="restaurant/index.html" class="card">
-<div class="card-thumb thumb-restaurant">
-<span>飲食店LP</span>
+<a href="./restaurant/" class="work-card">
+<div class="work-thumb work-thumb-2">
+<div class="work-thumb-inner"></div>
+<div class="work-badge">SAMPLE LP</div>
 </div>
-<div class="card-body">
-<div class="card-badge">RESTAURANT</div>
-<h2>炭火焼肉 和牛庵</h2>
-<p>高級焼肉店の集客LP。和の雰囲気を活かしたダーク×ゴールドのデザイン。おすすめメニュー・コース料金・店内ギャラリー・予約導線を最適化。</p>
-<div class="card-tags">
-<span class="tag">レスポンシブ</span>
-<span class="tag">CSS Grid</span>
-<span class="tag">明朝体</span>
-<span class="tag">単一HTML</span>
+<div class="work-body">
+<div class="work-category">RESTAURANT</div>
+<h3>炭火焼肉 和牛庵</h3>
+<p class="work-desc">高級焼肉店の集客LP。ダーク×ゴールドで重厚感を表現。コース料金表・店舗情報・予約導線を設計。</p>
+<div class="work-tags">
+<span>HTML/CSS</span>
+<span>レスポンシブ</span>
+<span>アニメーション</span>
 </div>
-<span class="card-link">サンプルを見る →</span>
-</div>
-</a>
-
-<a href="beauty-salon/index.html" class="card">
-<div class="card-thumb thumb-salon">
-<span>美容院LP</span>
-</div>
-<div class="card-body">
-<div class="card-badge">BEAUTY SALON</div>
-<h2>hair salon Luce</h2>
-<p>表参道のプライベートサロンLP。温かみのあるクリーム×ゴールドの配色。クーポン・メニュー料金表・スタイリスト紹介・スタイルギャラリーを網羅。</p>
-<div class="card-tags">
-<span class="tag">レスポンシブ</span>
-<span class="tag">CSS Grid</span>
-<span class="tag">クーポンUI</span>
-<span class="tag">単一HTML</span>
-</div>
-<span class="card-link">サンプルを見る →</span>
+<span class="work-link">VIEW →</span>
 </div>
 </a>
-
+<a href="./beauty-salon/" class="work-card">
+<div class="work-thumb work-thumb-3">
+<div class="work-thumb-inner"></div>
+<div class="work-badge">SAMPLE LP</div>
 </div>
+<div class="work-body">
+<div class="work-category">BEAUTY SALON</div>
+<h3>hair salon Luce</h3>
+<p class="work-desc">表参道の美容院LP。ナチュラル×フェミニンなデザイン。メニュー価格表・スタイリスト紹介・クーポンセクション。</p>
+<div class="work-tags">
+<span>HTML/CSS</span>
+<span>レスポンシブ</span>
+<span>アニメーション</span>
+</div>
+<span class="work-link">VIEW →</span>
+</div>
+</a>
+</div>
+</section>
+
+<section class="profile">
+<div class="profile-inner">
+<div class="profile-name">iimon_lab</div>
+<div class="profile-sub">WEB DEVELOPMENT / AI RESEARCH</div>
+<p class="profile-text">Webサイト・LP制作、PWA開発、AIを活用したリサーチ・データ分析を行っています。お客様のビジネスに最適なWebソリューションをご提供します。</p>
+<div class="profile-skills">
+<span>HTML / CSS</span>
+<span>JavaScript</span>
+<span>WordPress</span>
+<span>PWA</span>
+<span>Python</span>
+<span>AI活用</span>
+</div>
+</div>
+</section>
 
 <footer>
-<div class="brand">iimon_lab</div>
-<p>LP制作・Webサイト制作のご依頼はお気軽にお問い合わせください</p>
-<p style="margin-top:12px;opacity:.5">&copy; 2026 iimon_lab Portfolio</p>
+<div class="footer-logo">iimon_lab</div>
+<small>&copy; 2026 iimon_lab. All rights reserved.</small>
 </footer>
 
 </body>
