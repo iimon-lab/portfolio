@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>精密テクノ株式会社 | 高精度CNC切削加工のパートナー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0b1a2e;--navy-light:#132d4f;--navy-mid:#1a3a5c;
+  --white:#fff;--gray-50:#f7f8fa;--gray-100:#eef0f4;--gray-200:#dde1e8;--gray-400:#99a3b3;--gray-600:#5a6578;--gray-800:#2a3040;
+  --accent:#e8650a;--accent-hover:#ff7a1f;--accent-light:rgba(232,101,10,.08);
+  --blue-accent:#2b7de9;
+  --font-body:'Noto Sans JP',sans-serif;--font-num:'Roboto',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--gray-800);line-height:1.8;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* ===== Nav ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;transition:all .3s;background:transparent}
+.nav.scrolled{background:rgba(11,26,46,.97);padding:10px 40px;box-shadow:0 2px 20px rgba(0,0,0,.15)}
+.nav-logo{display:flex;align-items:center;gap:10px;color:var(--white)}
+.nav-logo-icon{width:36px;height:36px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-num);font-weight:700;font-size:16px;color:var(--white)}
+.nav-logo-text{font-size:15px;font-weight:700;letter-spacing:1px}
+.nav-logo-sub{font-size:10px;font-weight:300;letter-spacing:2px;opacity:.7;display:block}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:rgba(255,255,255,.75);font-size:13px;font-weight:400;transition:color .3s;letter-spacing:.5px}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{padding:10px 24px;background:var(--accent);color:var(--white);font-size:13px;font-weight:700;border-radius:6px;transition:background .3s;letter-spacing:.5px}
+.nav-cta:hover{background:var(--accent-hover)}
+@media(max-width:900px){.nav-links{display:none}.nav{padding:12px 20px}.nav.scrolled{padding:10px 20px}}
+
+/* ===== Hero ===== */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 40%,var(--navy-mid) 100%);color:var(--white);overflow:hidden;padding:100px 0 80px}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h80v80H0z' fill='none'/%3E%3Cpath d='M40 0v80M0 40h80' stroke='rgba(255,255,255,0.03)' stroke-width='0.5'/%3E%3C/svg%3E")}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;max-width:1100px;margin:0 auto;padding:0 20px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:rgba(232,101,10,.15);border:1px solid rgba(232,101,10,.3);border-radius:20px;font-size:12px;font-weight:500;color:var(--accent);margin-bottom:24px;letter-spacing:.5px}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.3;margin-bottom:16px;letter-spacing:1px}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:16px;font-weight:300;line-height:1.9;opacity:.85;margin-bottom:32px}
+.hero-stats{display:flex;gap:32px;margin-bottom:0}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:var(--font-num);font-size:36px;font-weight:700;color:var(--accent);line-height:1.2}
+.hero-stat-label{font-size:11px;opacity:.7;letter-spacing:1px}
+
+/* Hero Form */
+.hero-form{background:var(--white);border-radius:12px;padding:32px 28px;color:var(--gray-800);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.hero-form h3{font-size:18px;font-weight:700;margin-bottom:4px;text-align:center}
+.hero-form .form-sub{font-size:12px;color:var(--gray-400);text-align:center;margin-bottom:20px}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:12px;font-weight:500;margin-bottom:4px;color:var(--gray-600)}
+.form-group label .req{color:var(--accent);font-size:10px;margin-left:4px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 14px;border:1px solid var(--gray-200);border-radius:6px;font-family:var(--font-body);font-size:14px;transition:border-color .3s;outline:none;color:var(--gray-800)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue-accent);box-shadow:0 0 0 3px rgba(43,125,233,.1)}
+.form-group textarea{height:70px;resize:vertical}
+.form-submit{width:100%;padding:14px;background:var(--accent);color:var(--white);border:none;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;transition:background .3s;letter-spacing:1px;font-family:var(--font-body)}
+.form-submit:hover{background:var(--accent-hover)}
+.form-note{font-size:10px;color:var(--gray-400);text-align:center;margin-top:10px;line-height:1.6}
+.form-note a{color:var(--blue-accent);text-decoration:underline}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero{padding:120px 0 60px}
+  .hero-stats{gap:20px}
+  .hero-stat-num{font-size:28px}
+}
+
+/* ===== Section Common ===== */
+section{padding:80px 0}
+.sec-header{text-align:center;margin-bottom:56px}
+.sec-label{font-family:var(--font-num);font-size:13px;font-weight:500;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:8px}
+.sec-title{font-size:clamp(24px,3vw,32px);font-weight:900;letter-spacing:1px;line-height:1.4}
+.sec-title::after{content:'';display:block;width:40px;height:3px;background:var(--accent);margin:16px auto 0;border-radius:2px}
+.sec-desc{font-size:14px;color:var(--gray-600);margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto}
+.bg-gray{background:var(--gray-50)}
+.bg-navy{background:var(--navy);color:var(--white)}
+
+/* ===== Problem ===== */
+.problems{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.problem-card{background:var(--white);border:1px solid var(--gray-200);border-radius:12px;padding:28px 24px;text-align:center;position:relative;overflow:hidden}
+.problem-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--blue-accent))}
+.problem-icon{font-size:36px;margin-bottom:12px}
+.problem-card h4{font-size:15px;font-weight:700;margin-bottom:8px}
+.problem-card p{font-size:13px;color:var(--gray-600);line-height:1.7}
+@media(max-width:768px){.problems{grid-template-columns:1fr}}
+
+/* ===== Solution ===== */
+.solution-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.solution-visual{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,var(--navy-light),var(--navy-mid));border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.solution-visual-text{color:var(--white);text-align:center;padding:40px}
+.solution-visual-text .big{font-family:var(--font-num);font-size:72px;font-weight:700;color:var(--accent);line-height:1}
+.solution-visual-text .unit{font-size:14px;opacity:.7;margin-top:4px}
+.solution-list{list-style:none}
+.solution-list li{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px}
+.solution-check{width:24px;height:24px;background:var(--accent-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;color:var(--accent);font-size:14px;font-weight:700}
+.solution-list h4{font-size:15px;font-weight:700;margin-bottom:2px}
+.solution-list p{font-size:13px;color:var(--gray-600)}
+@media(max-width:768px){.solution-inner{grid-template-columns:1fr}}
+
+/* ===== Strengths ===== */
+.strengths{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.strength-card{background:var(--white);border-radius:12px;padding:36px 28px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s}
+.strength-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.strength-num{font-family:var(--font-num);font-size:48px;font-weight:700;color:var(--accent);line-height:1;margin-bottom:8px}
+.strength-card h4{font-size:17px;font-weight:700;margin-bottom:10px}
+.strength-card p{font-size:13px;color:var(--gray-600);line-height:1.7}
+@media(max-width:768px){.strengths{grid-template-columns:1fr}}
+
+/* ===== Results ===== */
+.results-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-bottom:48px}
+.logo-placeholder{width:140px;height:60px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;color:rgba(255,255,255,.5);letter-spacing:1px}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.result-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:28px 24px}
+.result-card .result-industry{font-size:11px;color:var(--accent);font-weight:500;letter-spacing:1px;margin-bottom:8px}
+.result-card h4{font-size:15px;font-weight:700;margin-bottom:12px;color:var(--white)}
+.result-card .result-metric{display:flex;align-items:baseline;gap:6px;margin-bottom:4px}
+.result-card .result-metric .val{font-family:var(--font-num);font-size:28px;font-weight:700;color:var(--accent)}
+.result-card .result-metric .label{font-size:12px;color:rgba(255,255,255,.6)}
+.result-card p{font-size:12px;color:rgba(255,255,255,.5);margin-top:10px;line-height:1.7}
+@media(max-width:768px){.results-grid{grid-template-columns:1fr}.results-logos{gap:12px}.logo-placeholder{width:100px;height:45px;font-size:10px}}
+
+/* ===== Testimonials ===== */
+.testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.testi-card{background:var(--white);border:1px solid var(--gray-200);border-radius:12px;padding:28px;position:relative}
+.testi-card::before{content:'\201C';position:absolute;top:16px;right:24px;font-size:48px;color:var(--gray-100);font-family:serif;line-height:1}
+.testi-text{font-size:14px;line-height:1.9;margin-bottom:16px;position:relative}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:44px;height:44px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--white);font-size:14px;font-weight:700}
+.testi-name{font-size:13px;font-weight:700}
+.testi-role{font-size:11px;color:var(--gray-400)}
+@media(max-width:768px){.testimonials{grid-template-columns:1fr}}
+
+/* ===== Equipment ===== */
+.equip-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.equip-card{background:var(--white);border:1px solid var(--gray-200);border-radius:10px;padding:20px;text-align:center}
+.equip-icon{font-size:28px;margin-bottom:8px}
+.equip-card h4{font-size:13px;font-weight:700;margin-bottom:4px}
+.equip-card p{font-size:11px;color:var(--gray-400)}
+@media(max-width:768px){.equip-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== Flow ===== */
+.flow-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative}
+.flow-steps::before{content:'';position:absolute;top:32px;left:10%;right:10%;height:2px;background:var(--gray-200)}
+.flow-step{text-align:center;position:relative}
+.flow-num{width:64px;height:64px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-family:var(--font-num);font-size:22px;font-weight:700;position:relative;z-index:2;border:3px solid var(--white);box-shadow:0 2px 10px rgba(0,0,0,.1)}
+.flow-step h4{font-size:13px;font-weight:700;margin-bottom:4px}
+.flow-step p{font-size:11px;color:var(--gray-600);line-height:1.6}
+@media(max-width:768px){.flow-steps{grid-template-columns:repeat(2,1fr);gap:24px}.flow-steps::before{display:none}}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--gray-200);padding:20px 0}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:16px}
+.faq-q h4{font-size:15px;font-weight:500;display:flex;align-items:center;gap:10px}
+.faq-q h4::before{content:'Q';font-family:var(--font-num);font-weight:700;color:var(--accent);font-size:16px}
+.faq-arrow{font-size:18px;color:var(--gray-400);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding-top:12px}
+.faq-a p{font-size:13px;color:var(--gray-600);line-height:1.8;padding-left:28px}
+
+/* ===== CTA Bottom ===== */
+.cta-bottom{text-align:center;padding:80px 20px}
+.cta-bottom h2{font-size:clamp(22px,3vw,30px);font-weight:900;color:var(--white);margin-bottom:12px}
+.cta-bottom p{font-size:14px;color:rgba(255,255,255,.7);margin-bottom:32px}
+.cta-bottom-form{max-width:560px;margin:0 auto;background:var(--white);border-radius:12px;padding:36px 32px;color:var(--gray-800)}
+.cta-bottom-form h3{font-size:18px;font-weight:700;margin-bottom:16px;text-align:center}
+
+/* ===== Footer ===== */
+.footer{background:var(--gray-800);color:rgba(255,255,255,.6);padding:40px 20px;text-align:center;font-size:12px}
+.footer-company{font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px}
+.footer-info{margin-bottom:16px;line-height:1.8}
+.footer-copy{font-family:var(--font-num);font-size:11px;opacity:.5}
+
+/* ===== Reveal ===== */
+.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.stagger-1{transition-delay:.1s}.stagger-2{transition-delay:.2s}.stagger-3{transition-delay:.3s}.stagger-4{transition-delay:.4s}.stagger-5{transition-delay:.5s}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">ST</div>
+    <div>
+      <div class="nav-logo-text">精密テクノ</div>
+      <span class="nav-logo-sub">SEIMITSU TECHNO</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#problem">よくある課題</a>
+    <a href="#strengths">選ばれる理由</a>
+    <a href="#results">導入実績</a>
+    <a href="#flow">ご依頼の流れ</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#contact" class="nav-cta">無料で相談する</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">ISO 9001:2015 認証取得工場</div>
+      <h1>試作1個から量産まで。<br><span>±0.005mm</span>の精度で<br>ものづくりを支える。</h1>
+      <p class="hero-sub">アルミ・ステンレス・チタン・樹脂まで幅広い素材に対応。<br>5軸CNC加工で複雑形状もワンチャッキングで実現します。</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">850<span style="font-size:18px">+</span></div><div class="hero-stat-label">取引社数</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">99.7<span style="font-size:18px">%</span></div><div class="hero-stat-label">納期遵守率</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">48<span style="font-size:18px">h</span></div><div class="hero-stat-label">最短納期</div></div>
+      </div>
+    </div>
+    <div class="hero-form" id="contact">
+      <h3>無料で技術相談する</h3>
+      <p class="form-sub">最短1営業日以内にご回答します</p>
+      <div class="form-group"><label>会社名<span class="req">必須</span></label><input type="text" placeholder="例：株式会社サンプル製作所"></div>
+      <div class="form-group"><label>お名前<span class="req">必須</span></label><input type="text" placeholder="例：山田 太郎"></div>
+      <div class="form-group"><label>メールアドレス<span class="req">必須</span></label><input type="email" placeholder="例：yamada@example.co.jp"></div>
+      <div class="form-group"><label>電話番号</label><input type="tel" placeholder="例：03-1234-5678"></div>
+      <div class="form-group"><label>ご相談内容</label><textarea placeholder="加工素材、数量、図面の有無などをお書きください"></textarea></div>
+      <button class="form-submit" onclick="document.querySelector('.form-submit').textContent='送信しました（デモ）'">無料で見積り・相談する</button>
+      <p class="form-note"><a href="#">プライバシーポリシー</a>に同意の上、送信してください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="bg-gray" id="problem">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">Problem</div>
+      <h2 class="sec-title">こんなお悩みありませんか？</h2>
+    </div>
+    <div class="problems">
+      <div class="problem-card reveal stagger-1">
+        <div class="problem-icon">⏱️</div>
+        <h4>試作の納期が間に合わない</h4>
+        <p>開発スケジュールがタイトで、加工業者の納期が合わず設計変更が滞っている。</p>
+      </div>
+      <div class="problem-card reveal stagger-2">
+        <div class="problem-icon">📐</div>
+        <h4>複雑形状を加工できる<br>業者が見つからない</h4>
+        <p>5軸加工が必要な部品を相談しても「対応できない」と断られてしまう。</p>
+      </div>
+      <div class="problem-card reveal stagger-3">
+        <div class="problem-icon">🔄</div>
+        <h4>試作から量産への切替で<br>品質がブレる</h4>
+        <p>試作では問題なかったのに、量産に移行すると寸法精度やバラつきが発生する。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solution -->
+<section id="solution">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">Solution</div>
+      <h2 class="sec-title">精密テクノが解決します</h2>
+    </div>
+    <div class="solution-inner">
+      <div class="solution-visual reveal">
+        <div class="solution-visual-text">
+          <div class="big">±0.005</div>
+          <div class="unit">mm 加工精度</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <ul class="solution-list">
+          <li>
+            <div class="solution-check">✓</div>
+            <div><h4>最短48時間の試作対応</h4><p>図面受領から最短48時間で試作品を出荷。開発スピードを落としません。</p></div>
+          </li>
+          <li>
+            <div class="solution-check">✓</div>
+            <div><h4>5軸同時加工で複雑形状に対応</h4><p>ワンチャッキングで多面加工が可能。工程集約により精度とコストを両立します。</p></div>
+          </li>
+          <li>
+            <div class="solution-check">✓</div>
+            <div><h4>試作から量産まで一貫品質管理</h4><p>試作段階で量産を見据えた工程設計を行い、スケールアップ時の品質ブレを防止します。</p></div>
+          </li>
+          <li>
+            <div class="solution-check">✓</div>
+            <div><h4>三次元測定機による全数検査対応</h4><p>要望に応じて検査成績書の発行も可能。トレーサビリティを確保します。</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section class="bg-gray" id="strengths">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">Strengths</div>
+      <h2 class="sec-title">選ばれる3つの理由</h2>
+    </div>
+    <div class="strengths">
+      <div class="strength-card reveal stagger-1">
+        <div class="strength-num">01</div>
+        <h4>5軸CNC加工機<br>12台体制</h4>
+        <p>DMG森精機・マザックの最新5軸加工機を12台保有。同時多面加工により、従来3工程かかっていた加工を1工程に集約します。</p>
+      </div>
+      <div class="strength-card reveal stagger-2">
+        <div class="strength-num">02</div>
+        <h4>素材対応力<br>50種以上</h4>
+        <p>アルミ・ステンレス・チタン・インコネル・PEEK・MCナイロンまで。難削材の加工ノウハウを持つ技術者が最適な条件を提案します。</p>
+      </div>
+      <div class="strength-card reveal stagger-3">
+        <div class="strength-num">03</div>
+        <h4>不良率<br>0.02%以下</h4>
+        <p>工程内検査＋三次元測定機による出荷前全数検査。ISO 9001に基づく品質管理体制で、不良率0.02%以下を継続しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="bg-navy" id="results">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label" style="color:var(--accent)">Results</div>
+      <h2 class="sec-title" style="color:var(--white)">導入実績</h2>
+      <p class="sec-desc" style="color:rgba(255,255,255,.5)">自動車・半導体・医療機器・航空宇宙の各分野で850社以上の実績</p>
+    </div>
+    <div class="results-logos reveal">
+      <div class="logo-placeholder">自動車メーカーA社</div>
+      <div class="logo-placeholder">半導体装置B社</div>
+      <div class="logo-placeholder">医療機器C社</div>
+      <div class="logo-placeholder">航空部品D社</div>
+      <div class="logo-placeholder">精密機器E社</div>
+    </div>
+    <div class="results-grid">
+      <div class="result-card reveal stagger-1">
+        <div class="result-industry">半導体装置メーカー</div>
+        <h4>試作リードタイム短縮</h4>
+        <div class="result-metric"><span class="val">65</span><span class="label">% 短縮</span></div>
+        <p>従来2週間かかっていた試作品の納品を5営業日に短縮。装置の開発サイクルが大幅に改善。</p>
+      </div>
+      <div class="result-card reveal stagger-2">
+        <div class="result-industry">医療機器メーカー</div>
+        <h4>加工コスト削減</h4>
+        <div class="result-metric"><span class="val">40</span><span class="label">% 削減</span></div>
+        <p>5軸加工による工程集約で、従来5工程を2工程に。段取り替えの削減でコストを大幅カット。</p>
+      </div>
+      <div class="result-card reveal stagger-3">
+        <div class="result-industry">自動車部品メーカー</div>
+        <h4>品質不良の解消</h4>
+        <div class="result-metric"><span class="val">0</span><span class="label">件 / 年（クレーム）</span></div>
+        <p>全数検査体制の導入により、切替え初年度から出荷クレームゼロを達成。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">Voice</div>
+      <h2 class="sec-title">お客様の声</h2>
+    </div>
+    <div class="testimonials">
+      <div class="testi-card reveal stagger-1">
+        <p class="testi-text">開発スケジュールが逼迫する中、試作を48時間で仕上げていただきました。図面段階での加工提案もあり、設計の手戻りが減ったのは想定外のメリットでした。</p>
+        <div class="testi-author">
+          <div class="testi-avatar">KS</div>
+          <div><div class="testi-name">K.S 様</div><div class="testi-role">半導体装置メーカー / 設計部門マネージャー</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal stagger-2">
+        <p class="testi-text">チタン合金の薄肉加工をどこに頼んでも断られていましたが、精密テクノさんだけが「できます」と即答でした。仕上がりも完璧で、今ではすべての試作をお願いしています。</p>
+        <div class="testi-author">
+          <div class="testi-avatar">YM</div>
+          <div><div class="testi-name">Y.M 様</div><div class="testi-role">医療機器メーカー / 開発部リーダー</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Equipment -->
+<section class="bg-gray" id="equipment">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">Equipment</div>
+      <h2 class="sec-title">主要設備</h2>
+    </div>
+    <div class="equip-grid">
+      <div class="equip-card reveal stagger-1">
+        <div class="equip-icon">⚙️</div>
+        <h4>5軸マシニングセンタ</h4>
+        <p>DMU 50 / VARIAXIS i-700 他 12台</p>
+      </div>
+      <div class="equip-card reveal stagger-2">
+        <div class="equip-icon">🔧</div>
+        <h4>CNC旋盤</h4>
+        <p>MAZAK QT-250 他 8台</p>
+      </div>
+      <div class="equip-card reveal stagger-3">
+        <div class="equip-icon">📏</div>
+        <h4>三次元測定機</h4>
+        <p>Zeiss CONTURA 他 3台</p>
+      </div>
+      <div class="equip-card reveal stagger-4">
+        <div class="equip-icon">🔬</div>
+        <h4>表面粗さ測定機</h4>
+        <p>Mitutoyo SJ-410 他 2台</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Flow -->
+<section id="flow">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">Flow</div>
+      <h2 class="sec-title">ご依頼の流れ</h2>
+    </div>
+    <div class="flow-steps reveal">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <h4>お問い合わせ</h4>
+        <p>フォームまたはお電話で<br>お気軽にご連絡ください</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <h4>図面確認・<br>ヒアリング</h4>
+        <p>図面を拝見し、素材・数量・<br>納期をヒアリングします</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <h4>お見積り</h4>
+        <p>最短即日でお見積りを<br>ご提出します</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <h4>加工・検査</h4>
+        <p>5軸加工＋三次元測定機で<br>高精度に仕上げます</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">5</div>
+        <h4>納品</h4>
+        <p>検査成績書とともに<br>出荷・納品します</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-gray" id="faq">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-title">よくあるご質問</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>最小ロットはいくつから対応できますか？</h4>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a"><p>試作1個からご対応しています。量産は月産10,000個まで対応可能です。少量多品種のご相談もお気軽にどうぞ。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>図面がない段階でも相談できますか？</h4>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a"><p>はい、可能です。ポンチ絵やスケッチの段階でもご相談ください。加工性を考慮した設計提案もいたします。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>対応可能な素材を教えてください。</h4>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a"><p>アルミ合金（A5052, A7075等）、ステンレス（SUS304, SUS316等）、チタン、インコネル、銅、真鍮、PEEK、MCナイロン等、50種類以上に対応しています。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>秘密保持契約（NDA）は締結できますか？</h4>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a"><p>はい、お取引前にNDAを締結いたします。お客様の図面・技術情報は厳重に管理しています。</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <h4>表面処理（アルマイト、メッキ等）も対応できますか？</h4>
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a"><p>協力会社のネットワークにより、アルマイト・無電解ニッケル・硬質クロムメッキ等の表面処理も一括で手配可能です。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Bottom -->
+<section class="bg-navy cta-bottom" id="cta-bottom">
+  <div class="container">
+    <h2 class="reveal">まずは図面1枚からご相談ください</h2>
+    <p class="reveal">技術的なご質問だけでも構いません。最短1営業日以内にご回答します。</p>
+    <div class="cta-bottom-form reveal">
+      <h3>無料で技術相談・見積り依頼</h3>
+      <div class="form-group"><label>会社名<span class="req">必須</span></label><input type="text" placeholder="例：株式会社サンプル製作所"></div>
+      <div class="form-group"><label>お名前<span class="req">必須</span></label><input type="text" placeholder="例：山田 太郎"></div>
+      <div class="form-group"><label>メールアドレス<span class="req">必須</span></label><input type="email" placeholder="例：yamada@example.co.jp"></div>
+      <div class="form-group"><label>ご相談内容</label><textarea placeholder="加工素材、数量、図面の有無などをお書きください"></textarea></div>
+      <button class="form-submit" onclick="this.textContent='送信しました（デモ）'">無料で見積り・相談する</button>
+      <p class="form-note"><a href="#">プライバシーポリシー</a>に同意の上、送信してください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-company">精密テクノ株式会社</div>
+  <div class="footer-info">
+    〒000-0000 東京都大田区○○ 0-0-0<br>
+    TEL: 03-0000-0000 / FAX: 03-0000-0000<br>
+    営業時間: 平日 8:30〜17:30
+  </div>
+  <div class="footer-copy">© 2024 Seimitsu Techno Inc. All Rights Reserved. ※このページはポートフォリオ用のサンプルです</div>
+</footer>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
+});
+
+// Reveal
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// FAQ
+function toggleFaq(el){
+  el.closest('.faq-item').classList.toggle('open');
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+</body>
+</html>
